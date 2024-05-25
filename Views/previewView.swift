@@ -8,23 +8,18 @@
 import SwiftUI
 
 struct basicStudentInfo: View {
-    
-    let studentName:String
-    let imageFileTitle:String
-    let yearGraduated:String
-    let lineNumberRestriction:Int
+    let Person:Info
     var body: some View {
         VStack(alignment:.leading){
-            Image(imageFileTitle)
+            Image(Person.image)
                 .resizable()
                 .frame(width: 130,height: 160)
                 .cornerRadius(5.0)
-            Text(studentName)
+            Text(Person.name)
                 .font(.system(size: 15))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-                .lineLimit(lineNumberRestriction)
-            Text(yearGraduated)
+            Text(Person.gradYearSimp)
                 .font(.system(size:15 ))
                 .padding(.leading,5)
             }
@@ -36,5 +31,5 @@ struct basicStudentInfo: View {
     
 
 #Preview {
-    basicStudentInfo(studentName: "Vincent Cloutier", imageFileTitle: "Vincent", yearGraduated: "'22", lineNumberRestriction: 2)
+    basicStudentInfo(Person:vincentCloutier)
 }

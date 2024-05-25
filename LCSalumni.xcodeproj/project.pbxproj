@@ -14,6 +14,9 @@
 		BF1367992C00EC70006FF408 /* LCSalumniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367982C00EC70006FF408 /* LCSalumniTests.swift */; };
 		BF1367A32C00EC70006FF408 /* LCSalumniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367A22C00EC70006FF408 /* LCSalumniUITests.swift */; };
 		BF1367A52C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */; };
+		BF1367B32C00F742006FF408 /* previewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B22C00F741006FF408 /* previewView.swift */; };
+		BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B42C015AE5006FF408 /* LandingViews.swift */; };
+		BF1367B82C015D03006FF408 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B72C015D03006FF408 /* Info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		BF13679E2C00EC70006FF408 /* LCSalumniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCSalumniUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1367A22C00EC70006FF408 /* LCSalumniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSalumniUITests.swift; sourceTree = "<group>"; };
 		BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSalumniUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF1367B22C00F741006FF408 /* previewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previewView.swift; sourceTree = "<group>"; };
+		BF1367B42C015AE5006FF408 /* LandingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViews.swift; sourceTree = "<group>"; };
+		BF1367B72C015D03006FF408 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				BF1367862C00EC6D006FF408 /* LCSalumni */,
+				BF1367B12C00F318006FF408 /* Views */,
 				BF1367972C00EC70006FF408 /* LCSalumniTests */,
 				BF1367A12C00EC70006FF408 /* LCSalumniUITests */,
 				BF1367852C00EC6D006FF408 /* Products */,
@@ -95,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				BF1367872C00EC6D006FF408 /* LCSalumniApp.swift */,
-				BF1367892C00EC6D006FF408 /* ContentView.swift */,
 				BF13678B2C00EC70006FF408 /* Assets.xcassets */,
 				BF13678D2C00EC70006FF408 /* Preview Content */,
+				BF1367B62C015CD7006FF408 /* Models */,
 			);
 			path = LCSalumni;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		BF13678D2C00EC70006FF408 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				BF1367892C00EC6D006FF408 /* ContentView.swift */,
 				BF13678E2C00EC70006FF408 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -125,6 +133,23 @@
 				BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */,
 			);
 			path = LCSalumniUITests;
+			sourceTree = "<group>";
+		};
+		BF1367B12C00F318006FF408 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF1367B22C00F741006FF408 /* previewView.swift */,
+				BF1367B42C015AE5006FF408 /* LandingViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF1367B62C015CD7006FF408 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF1367B72C015D03006FF408 /* Info.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */,
+				BF1367B32C00F742006FF408 /* previewView.swift in Sources */,
 				BF13678A2C00EC6D006FF408 /* ContentView.swift in Sources */,
+				BF1367B82C015D03006FF408 /* Info.swift in Sources */,
 				BF1367882C00EC6D006FF408 /* LCSalumniApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
