@@ -13,19 +13,19 @@ struct basicStudentInfo: View {
         VStack(alignment:.leading){
             Image(Person.image)
                 .resizable()
-                .frame(width: 130,height: 160)
+                .frame(width: 88,height: 108)
                 .cornerRadius(5.0)
             Text(Person.name)
-                .font(.system(size: 15))
+                .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
             Text(Person.gradYearSimp)
-                .font(.system(size:15 ))
+                .font(.system(size:10 ))
                 .padding(.leading,5)
             }
-        .frame(width:100)
         .padding(.leading,5)
         .padding(.trailing,5)
+        
             }
         }
     
