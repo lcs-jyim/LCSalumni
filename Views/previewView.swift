@@ -25,6 +25,7 @@ struct basicStudentInfo: View {
             }
         .padding(.leading,5)
         .padding(.trailing,5)
+        .padding(.vertical,30)
         
             }
         }

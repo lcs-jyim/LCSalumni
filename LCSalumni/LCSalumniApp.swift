@@ -10,8 +10,27 @@ import SwiftUI
 @main
 struct LCSalumniApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup{
+            TabView {
+                LandingViews()
+                    .tabItem {
+                        Image(
+                            systemName: "house")
+                        Text("Home")
+                    }
+                Text("Search")
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                Text("Favorites")
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("Favorites")
+                    }
+
+            }
+
         }
     }
 }
