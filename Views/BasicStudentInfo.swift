@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct basicStudentInfo: View {
+struct BasicStudentInfo: View {
     let Person:Info
     var body: some View {
         VStack(alignment:.leading){
@@ -32,5 +32,5 @@ struct basicStudentInfo: View {
     
 
 #Preview {
-    basicStudentInfo(Person:vincentCloutier)
+    BasicStudentInfo(Person:vincentCloutier)
 }

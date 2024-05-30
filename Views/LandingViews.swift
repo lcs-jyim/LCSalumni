@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LandingViews: View {
     @State var searchText = ""
+    @State var isSheetPresented = false
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
@@ -31,7 +32,7 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                 ForEach(recentlyGrads) {currentStudent in
-                                    basicStudentInfo(Person:currentStudent)
+                                    BasicStudentInfo(Person:currentStudent)
                                     
                                 }
                             }
@@ -51,7 +52,7 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                 ForEach(FamousAlumni) {currentStudent in
-                                    basicStudentInfo(Person:currentStudent)
+                                    BasicStudentInfo(Person:currentStudent)
                                     
                                 }
                             }
@@ -67,6 +68,19 @@ struct LandingViews: View {
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
                             .padding(.leading,10)
+                            .toolbar{
+                                ToolbarItem(placement: .topBarTrailing){
+                                    Button(action:{isSheetPresented.toggle()}){
+                                        Image(systemName: "line.3.horizontal.decrease.circle")
+                                            
+                                            }
+                                    .sheet(isPresented: $isSheetPresented) {
+                                        FilterView()
+                                            .presentationDetents([.large, .medium,.fraction(0.63)])
+                                    }
+                                    
+                                }
+                            }
                     
                 }
                 
@@ -76,3 +90,7 @@ struct LandingViews: View {
 #Preview {
     LandingViews()
 }
+
+//#Preview {
+//    filterView()
+//}

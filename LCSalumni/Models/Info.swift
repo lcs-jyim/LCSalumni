@@ -102,3 +102,65 @@ let FamousAlumni = [
     christianKracht,
     codyCeci
 ]
+
+struct Uni: Identifiable{
+    let id = UUID()
+    let universalItem:String
+}
+let UofT = Uni(universalItem: "University of Toronto")
+let waterloo = Uni(universalItem: "University of Waterloo")
+let UOttawa = Uni(universalItem: "University of Ottawa")
+let McMaster = Uni(universalItem: "University of McMaster")
+let ubc = Uni(universalItem: "University of British Columbia")
+
+
+let CaUniversities = [
+UofT,
+waterloo,
+UOttawa,
+McMaster,
+ubc
+]
+
+let Male = Uni(universalItem: "M")
+let Female = Uni(universalItem: "F")
+let NB = Uni(universalItem: "Non Binary")
+
+let Genders = [
+Male,
+Female,
+NB]
+
+let jack = Uni(universalItem: "Jack")
+let kevin = Uni(universalItem: "Kevin")
+let john = Uni(universalItem: "John")
+let jason = Uni(universalItem: "Jason")
+let charlotte = Uni(universalItem: "Charlotte")
+let emma = Uni(universalItem: "Emma")
+let olivia = Uni(universalItem: "Olivia")
+
+let firstNames = [
+jack,
+kevin,
+john,
+jason,
+charlotte,
+emma,
+olivia]
+
+let ross = Uni(universalItem: "Ross")
+let smith = Uni(universalItem: "Smith")
+let armstrong = Uni(universalItem: "ArmStrong")
+let mcewen = Uni(universalItem: "Mcewen")
+let ryder = Uni(universalItem: "Ryder")
+let mathews = Uni(universalItem: "Mathews")
+let jones = Uni(universalItem: "Jones")
+
+let lastNames = [
+ross,
+smith,
+armstrong,
+mcewen,
+ryder,
+mathews,
+jones]
