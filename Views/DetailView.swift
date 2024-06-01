@@ -55,14 +55,14 @@ struct DetailView: View {
             }
             .navigationTitle(Person.name+Person.gradYearSimp)
             .toolbar{
-                ToolbarItem(placement:.topBarLeading){
-                    Button(action:{}){
-                        HStack{
-                            Image(systemName: "chevron.left")
-                            Text("Back to Home")
-                        }
-                    }
-                }
+//                ToolbarItem(placement:.topBarLeading){
+//                    Button(action:{}){
+//                        HStack{
+//                            Image(systemName: "chevron.left")
+//                            Text("Back to Home")
+//                        }
+//                    }
+//                }
                 ToolbarItem(placement:.topBarTrailing){
                     Button(action:{Person.isFavorite.toggle()}){
                         Image(systemName: Person.isFavorite ? "star.fill" : "star")

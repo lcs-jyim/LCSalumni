@@ -8,10 +8,10 @@
 import Foundation
 @Observable
 
-class AlumniViewModel {
-    var Alumni: [Info]
+class InfoViewModel {
+    var alumni: [Info]
     
-    init(Alumni: [Info]) {
-        self.Alumni = Alumni
+    init(alumni: [Info]) {
+        self.alumni = alumni
     }
 }

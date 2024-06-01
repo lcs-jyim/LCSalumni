@@ -10,6 +10,8 @@ import SwiftUI
 struct LandingViews: View {
     @State var searchText = ""
     @State var isSheetPresented = false
+    @State var recent:[Info] = recentlyGrads
+    @State var Notorious:[Info] = FamousAlumni
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
@@ -32,11 +34,12 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                
-                                ForEach(recentlyGrads) {currentStudent in
+                                ForEach($recent) {$currentStudent in
                                     NavigationLink{
-                                        DetailView(Person:currentStudent)
+                                        DetailView(Person:$currentStudent)
                                     }label: {
                                         BasicStudentInfo(Person:currentStudent)
+                                            .foregroundColor(.black)
                                     }
                                 }
                             }
@@ -55,8 +58,13 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach(FamousAlumni) {currentStudent in
-                                    BasicStudentInfo(Person:currentStudent)
+                                ForEach($Notorious) {$currentStudent in
+                                    NavigationLink{
+                                        DetailView(Person:$currentStudent)
+                                    }label: {
+                                        BasicStudentInfo(Person:currentStudent)
+                                            .foregroundColor(.black)
+                                    }
                                     
                                 }
                             }
