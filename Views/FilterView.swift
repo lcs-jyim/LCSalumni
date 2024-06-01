@@ -20,7 +20,7 @@ struct FilterView: View {
                             
                             ForEach(2010..<2020){ year in
                                 Button(action:{}){
-                                    FilterItemView(Filterobject: Uni(universalItem: "\(year)"))
+                                    FilterItemView(filterObject: Uni(universalItem: "\(year)"))
                                 }
                             }
                         }
@@ -30,7 +30,7 @@ struct FilterView: View {
                             HStack{
                                 ForEach(Genders){ gender in
                                     Button(action:{}){
-                                        FilterItemView(Filterobject:gender)
+                                        FilterItemView(filterObject:gender)
                                     }
                                 }
                             }
@@ -41,7 +41,7 @@ struct FilterView: View {
                             HStack{
                                 ForEach(firstNames){ givenName in
                                     Button(action:{}){
-                                        FilterItemView(Filterobject:givenName)
+                                        FilterItemView(filterObject:givenName)
                                     }
                                 }
                             }
@@ -51,7 +51,7 @@ struct FilterView: View {
                             HStack{
                                 ForEach(lastNames){ familyName in
                                     Button(action:{}){
-                                        FilterItemView(Filterobject:familyName)
+                                        FilterItemView(filterObject:familyName)
                                     }
                                 }
                             }
@@ -61,7 +61,7 @@ struct FilterView: View {
                             HStack{
                                 ForEach(CaUniversities){ University in
                                     Button(action:{}){
-                                        FilterItemView(Filterobject:University)
+                                        FilterItemView(filterObject:University)
                                     }
                                 }
                             }

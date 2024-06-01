@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FilterItemView: View {
-    let Filterobject:Uni
+    let filterObject:Uni
     var body: some View {
-            Text(Filterobject.universalItem)
+            Text(filterObject.universalItem)
             .foregroundColor(.black)
             .padding(.horizontal,15)
             .padding(.vertical,2)
@@ -23,5 +23,5 @@ struct FilterItemView: View {
 }
 
 #Preview {
-    FilterItemView(Filterobject:UofT)
+    FilterItemView(filterObject:UofT)
 }

@@ -56,7 +56,7 @@ Sit amet facilisis magna etiam tempor orci. Quis eleifend quam adipiscing vitae 
 
 
 
-let recentlyGrads = [
+var recentlyGrads = [
     vincentCloutier,
     jackCraig,
     fritzFischerAppelt,

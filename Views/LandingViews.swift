@@ -31,9 +31,13 @@ struct LandingViews: View {
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
+                               
                                 ForEach(recentlyGrads) {currentStudent in
-                                    BasicStudentInfo(Person:currentStudent)
-                                    
+                                    NavigationLink{
+                                        DetailView(Person:currentStudent)
+                                    }label: {
+                                        BasicStudentInfo(Person:currentStudent)
+                                    }
                                 }
                             }
                         }
