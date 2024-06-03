@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailListView: View {
-    let Person: Info
+    @State var Person: Info
     var body: some View {
         HStack{
             HStack{

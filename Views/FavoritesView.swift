@@ -11,7 +11,9 @@ struct FavoritesView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                    List(allStudents.filter{ $0.isFavorite}){currentStudent in
+                List(allStudents.filter{ student in
+                    student.isFavorite
+                }){ currentStudent in
                         DetailListView(Person: currentStudent)
                     }
                 }

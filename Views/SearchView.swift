@@ -9,8 +9,17 @@ import SwiftUI
 
 struct SearchView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List(allStudents.sorted(by: { leftHandSide, rightHandSide in
+                leftHandSide.name < rightHandSide.name
+            })) { currentStudent in
+                DetailListView(Person: currentStudent)
+            }
+            .navigationTitle("Search")
+        }
+        
     }
+    
 }
 
 #Preview {
