@@ -23,6 +23,7 @@
 		BFA3D02A2C08ABD100BAF29C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3D0292C08ABD100BAF29C /* FilterView.swift */; };
 		BFA3D02C2C08BBB400BAF29C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3D02B2C08BBB400BAF29C /* SearchView.swift */; };
 		BFAB80482C0E435B000A22C6 /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB80472C0E435B000A22C6 /* DetailListView.swift */; };
+		BFAB804A2C0E447D000A22C6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB80492C0E447D000A22C6 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		BFA3D0292C08ABD100BAF29C /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		BFA3D02B2C08BBB400BAF29C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BFAB80472C0E435B000A22C6 /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
+		BFAB80492C0E447D000A22C6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				BFA3D02B2C08BBB400BAF29C /* SearchView.swift */,
 				BF5E50332C0A24E5004E3FBB /* DetailView.swift */,
 				BFAB80472C0E435B000A22C6 /* DetailListView.swift */,
+				BFAB80492C0E447D000A22C6 /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				BF1367B32C00F742006FF408 /* BasicStudentInfo.swift in Sources */,
 				BFA3D02C2C08BBB400BAF29C /* SearchView.swift in Sources */,
 				BF13678A2C00EC6D006FF408 /* ContentView.swift in Sources */,
+				BFAB804A2C0E447D000A22C6 /* FavoritesView.swift in Sources */,
 				BFAB80482C0E435B000A22C6 /* DetailListView.swift in Sources */,
 				BF1367B82C015D03006FF408 /* Info.swift in Sources */,
 				BF1367882C00EC6D006FF408 /* LCSalumniApp.swift in Sources */,

@@ -23,7 +23,7 @@ struct LCSalumniApp: App {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
-                Text("Favorites")
+                FavoritesView()
                     .tabItem {
                         Image(systemName: "star.fill")
                         Text("Favorites")

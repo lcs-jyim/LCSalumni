@@ -165,3 +165,18 @@ mcewen,
 ryder,
 mathews,
 jones]
+
+let allStudents = [
+    vincentCloutier,
+    jackCraig,
+    fritzFischerAppelt,
+    carterChartier,
+    rileyGrosskopf,
+    davidCrispo,
+    davidMiller,
+    willArnett,
+    jimHarris,
+    felipeVI,
+    christianKracht,
+    codyCeci
+]
