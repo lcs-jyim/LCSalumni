@@ -95,7 +95,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Sit amet facilisis magna etiam tempor orci. Quis eleifend quam adipiscing vitae proin sagittis. Mollis nunc sed id semper risus in. Pellentesque dignissim enim sit amet venenatis. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Eu volutpat odio facilisis mauris. Purus gravida quis blandit turpis cursus in hac habitasse platea. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Fringilla ut morbi tincidunt augue interdum velit euismod. Sed ullamcorper morbi tincidunt ornare massa eget egestas
 """, gradYear: 1910, gradYearSimp: "'10", isFavorite: false)
 
-let FamousAlumni = [
+var FamousAlumni = [
     davidMiller,
     willArnett,
     jimHarris,
@@ -166,7 +166,7 @@ ryder,
 mathews,
 jones]
 
-let allStudents = [
+var allStudents = [
     vincentCloutier,
     jackCraig,
     fritzFischerAppelt,

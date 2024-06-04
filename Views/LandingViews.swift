@@ -27,7 +27,7 @@ struct LandingViews: View {
                                 .resizable()
                                 .frame(width: 10,height:22)
                                 .bold()
-                        }
+                         }
                         
                         
                         

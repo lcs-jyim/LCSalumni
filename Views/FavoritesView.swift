@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @State var all:[Info] = allStudents
+    @State var recent:[Info] = recentlyGrads
     var body: some View {
         NavigationStack{
             VStack{
-                List(allStudents.filter{ student in
-                    student.isFavorite
-                }){ currentStudent in
-                        DetailListView(Person: currentStudent)
+//                    List(allStudents.filter{Student in Student.isFavorite}){currentStudent in
+//                        DetailListView(Person: currentStudent)
+//                    }
+                ScrollView(.vertical) {
+                    List{
+                        ForEach($all.filter{Student in Student.isFavorite}) {$currentStudent in
+                            NavigationLink{
+                                DetailView(Person:$currentStudent)
+                            }label: {
+                                BasicStudentInfo(Person:currentStudent)
+                                    .foregroundColor(.black)
+                            }
+                        }
                     }
                 }
-            .navigationTitle("Favorites")
+                }
+            
         }
         
     }
