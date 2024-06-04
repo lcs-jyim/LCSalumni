@@ -12,24 +12,17 @@ struct FavoritesView: View {
     @State var recent:[Info] = recentlyGrads
     var body: some View {
         NavigationStack{
-            VStack{
-//                    List(allStudents.filter{Student in Student.isFavorite}){currentStudent in
-//                        DetailListView(Person: currentStudent)
-//                    }
-                ScrollView(.vertical) {
                     List{
-                        ForEach($all.filter{Student in Student.isFavorite}) {$currentStudent in
+                        ForEach($all.filter{Student in Student.isFavorite.wrappedValue}) {$currentStudent in
                             NavigationLink{
                                 DetailView(Person:$currentStudent)
                             }label: {
-                                BasicStudentInfo(Person:currentStudent)
+                                DetailListView(Person:currentStudent)
                                     .foregroundColor(.black)
                             }
                         }
                     }
-                }
-                }
-            
+                    .navigationTitle("Favorites")
         }
         
     }
