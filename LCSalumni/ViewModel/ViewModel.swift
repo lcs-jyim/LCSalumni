@@ -17,6 +17,24 @@ class ViewModel {
         }
     }
     
+    func getalumni() async throws {
+        fetchingTodos = true
+        do {
+            let results: [Info] = try await supabase
+                .from("alumni")
+                .select()
+                .order("id", ascending: true)
+                .execute()
+                .value
+            
+            self.alumni = results
+        fetchingTodos = false
+        } catch {
+            debugPrint(error)
+        }
+        
+    }
+
         
     
     
