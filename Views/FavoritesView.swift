@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FavoritesView: View {
     @State var all:[Info] = allStudents
-    @State var recent:[Info] = recentlyGrads
     var body: some View {
         NavigationStack{
                     List{
                         ForEach($all.filter{Student in Student.isFavorite.wrappedValue}) {$currentStudent in
+                            let _ = dump(all)
                             NavigationLink{
                                 DetailView(Person:$currentStudent)
                             }label: {

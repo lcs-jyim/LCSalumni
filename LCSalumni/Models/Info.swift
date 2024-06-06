@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Info: Identifiable {
     let id = UUID()
-    let name: String
+    var name: String
     let image: String
     let gender: String
     let sigAchievement:String

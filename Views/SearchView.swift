@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var all:[Info] = allStudents
     var body: some View {
         NavigationStack{
-            List(allStudents.sorted(by: { leftHandSide, rightHandSide in
-                leftHandSide.name < rightHandSide.name
-            })) { currentStudent in
-                DetailListView(Person: currentStudent)
+            List($all.sorted(by: { leftHandSide, rightHandSide in
+                leftHandSide.name.wrappedValue < rightHandSide.name.wrappedValue
+            })) { $currentStudent in
+                NavigationLink{
+                    DetailView(Person:$currentStudent)
+                }label: {
+                    DetailListView(Person:currentStudent)
+                        .foregroundColor(.black)
+                }
             }
             .navigationTitle("Search")
         }
