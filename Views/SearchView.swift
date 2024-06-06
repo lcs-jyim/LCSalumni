@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchText = ""
     @State var all:[Info] = allStudents
     var body: some View {
         NavigationStack{
@@ -20,9 +21,11 @@ struct SearchView: View {
                     DetailListView(Person:currentStudent)
                         .foregroundColor(.black)
                 }
+                
             }
             .navigationTitle("Search")
         }
+        .searchable(text: $searchText)
         
     }
     
