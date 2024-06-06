@@ -9,7 +9,7 @@ import Foundation
 @Observable
 class ViewModel {
     var alumni: [Info]
-    var fetchingTodos: Bool = false
+    var fetchingalumni: Bool = false
     init(alumni: [Info] = []){
         self.alumni = alumni
         Task{
@@ -18,7 +18,7 @@ class ViewModel {
     }
     
     func getalumni() async throws {
-        fetchingTodos = true
+        fetchingalumni = true
         do {
             let results: [Info] = try await supabase
                 .from("alumni")
@@ -28,14 +28,45 @@ class ViewModel {
                 .value
             
             self.alumni = results
-        fetchingTodos = false
+        fetchingalumni = false
         } catch {
             debugPrint(error)
         }
         
     }
 
+    func filterAlumni(on searchTerm: String) async throws {
         
+        if searchTerm.isEmpty {
+            
+            // Get all the to-dos
+            Task {
+                try await getalumni()
+            }
+            
+        } else {
+            
+            // Get a filtered list of to-dos
+            do {
+                let results: [Info] = try await supabase
+                    .from("alumni")
+                    .select()
+                    .ilike("name", pattern: "%\(searchTerm)%")
+                    .order("id", ascending: true)
+                    .execute()
+                    .value
+                
+                self.alumni = results
+                
+            } catch {
+                debugPrint(error)
+            }
+            
+        }
+        
+    }
+      
+    
     
     
     

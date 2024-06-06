@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Info: Identifiable {
-    let id = UUID()
+struct Info: Identifiable, Codable {
+    var id: Int?
     var name: String
     let image: String
     let gender: String
