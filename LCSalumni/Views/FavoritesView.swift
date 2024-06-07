@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @State var all:[Info] = allStudents
+    @State var all:[Alumnus] = allStudents
     var body: some View {
         NavigationStack{
                     List{

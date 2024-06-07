@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct BasicStudentInfo: View {
-    let Person:Info
+    let person: Alumnus
+    
     var body: some View {
+        
         VStack(alignment:.leading){
-            Image(Person.image)
+            Image(person.image)
                 .resizable()
                 .frame(width: 88,height: 108)
                 .cornerRadius(5.0)
-            Text(Person.name)
+            Text(person.name)
                 .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-            Text(Person.gradYearSimp)
+            Text(person.gradYearSimp)
                 .font(.system(size:10 ))
                 .padding(.leading,5)
-            }
+        }
         .padding(.leading,5)
         .padding(.trailing,5)
         .padding(.vertical,30)
         
-            }
-        }
-    
+    }
+}
+
 
 #Preview {
-    BasicStudentInfo(Person:vincentCloutier)
+    BasicStudentInfo(person: vincentCloutier)
 }

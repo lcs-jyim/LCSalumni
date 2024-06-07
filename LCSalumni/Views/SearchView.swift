@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-    @State var all:[Info] = allStudents
+    @State var all:[Alumnus] = allStudents
     var body: some View {
         NavigationStack{
             List($all.sorted(by: { leftHandSide, rightHandSide in

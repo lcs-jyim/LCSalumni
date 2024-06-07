@@ -59,7 +59,7 @@ struct FilterView: View {
                         Text("University Graduated/ Studied in")
                         ScrollView(.horizontal) {
                             HStack{
-                                ForEach(CaUniversities){ University in
+                                ForEach(canadianUniversities){ University in
                                     Button(action:{}){
                                         FilterItemView(filterObject:University)
                                     }

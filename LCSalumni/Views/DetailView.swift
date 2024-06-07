@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct DetailView: View {
-    @Binding var Person: Info
+    @Binding var Person: Alumnus
     var body: some View {
         NavigationStack{
             ZStack{

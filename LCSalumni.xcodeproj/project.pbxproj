@@ -16,7 +16,7 @@
 		BF1367A52C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */; };
 		BF1367B32C00F742006FF408 /* BasicStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B22C00F741006FF408 /* BasicStudentInfo.swift */; };
 		BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B42C015AE5006FF408 /* LandingViews.swift */; };
-		BF1367B82C015D03006FF408 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B72C015D03006FF408 /* Info.swift */; };
+		BF1367B82C015D03006FF408 /* Alumnus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B72C015D03006FF408 /* Alumnus.swift */; };
 		BF5E50342C0A24E5004E3FBB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E50332C0A24E5004E3FBB /* DetailView.swift */; };
 		BF6AC2592C0528D300A112AF /* FilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AC2582C0528D300A112AF /* FilterItemView.swift */; };
 		BFA3D02A2C08ABD100BAF29C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3D0292C08ABD100BAF29C /* FilterView.swift */; };
@@ -63,7 +63,7 @@
 		BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSalumniUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF1367B22C00F741006FF408 /* BasicStudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStudentInfo.swift; sourceTree = "<group>"; };
 		BF1367B42C015AE5006FF408 /* LandingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViews.swift; sourceTree = "<group>"; };
-		BF1367B72C015D03006FF408 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		BF1367B72C015D03006FF408 /* Alumnus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alumnus.swift; sourceTree = "<group>"; };
 		BF5E50332C0A24E5004E3FBB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BF6AC2582C0528D300A112AF /* FilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemView.swift; sourceTree = "<group>"; };
 		BFA3D0292C08ABD100BAF29C /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				BF1367862C00EC6D006FF408 /* LCSalumni */,
-				BF1367B12C00F318006FF408 /* Views */,
 				BF1367972C00EC70006FF408 /* LCSalumniTests */,
 				BF1367A12C00EC70006FF408 /* LCSalumniUITests */,
 				BF1367852C00EC6D006FF408 /* Products */,
@@ -132,8 +131,10 @@
 				BF1367872C00EC6D006FF408 /* LCSalumniApp.swift */,
 				BF13678B2C00EC70006FF408 /* Assets.xcassets */,
 				BF13678D2C00EC70006FF408 /* Preview Content */,
-				BF5E50352C0A324D004E3FBB /* ViewModel */,
+				BFD20A7B2C123897002B8862 /* Helpers */,
 				BF1367B62C015CD7006FF408 /* Models */,
+				BF1367B12C00F318006FF408 /* Views */,
+				BF5E50352C0A324D004E3FBB /* ViewModel */,
 			);
 			path = LCSalumni;
 			sourceTree = "<group>";
@@ -182,7 +183,7 @@
 		BF1367B62C015CD7006FF408 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF1367B72C015D03006FF408 /* Info.swift */,
+				BF1367B72C015D03006FF408 /* Alumnus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				BFD20A6A2C11ED74002B8862 /* ViewModel.swift */,
-				BFD20A7B2C123897002B8862 /* Helpers */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				BF13678A2C00EC6D006FF408 /* ContentView.swift in Sources */,
 				BFAB804A2C0E447D000A22C6 /* FavoritesView.swift in Sources */,
 				BFAB80482C0E435B000A22C6 /* DetailListView.swift in Sources */,
-				BF1367B82C015D03006FF408 /* Info.swift in Sources */,
+				BF1367B82C015D03006FF408 /* Alumnus.swift in Sources */,
 				BFD20A6B2C11ED74002B8862 /* ViewModel.swift in Sources */,
 				BF1367882C00EC6D006FF408 /* LCSalumniApp.swift in Sources */,
 			);

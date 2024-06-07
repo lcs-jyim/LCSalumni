@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LandingViews: View {
+    
     @State var searchText = ""
     @State var isSheetPresented = false
-    @State var recent:[Info] = recentlyGrads
-    @State var Notorious:[Info] = FamousAlumni
+    @State var recent: [Alumnus] = recentGrads
+    @State var notorious: [Alumnus] = famousAlumni
+    
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
@@ -38,7 +40,7 @@ struct LandingViews: View {
                                     NavigationLink{
                                         DetailView(Person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(Person:currentStudent)
+                                        BasicStudentInfo(person:currentStudent)
                                             .foregroundColor(.black)
                                     }
                                 }
@@ -58,11 +60,11 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach($Notorious) {$currentStudent in
+                                ForEach($notorious) { $currentStudent in
                                     NavigationLink{
                                         DetailView(Person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(Person:currentStudent)
+                                        BasicStudentInfo(person:currentStudent)
                                             .foregroundColor(.black)
                                     }
                                     

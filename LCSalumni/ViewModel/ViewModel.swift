@@ -8,19 +8,22 @@
 import Foundation
 @Observable
 class ViewModel {
-    var alumni: [Info]
-    var fetchingalumni: Bool = false
-    init(alumni: [Info] = []){
+    
+    var alumni: [Alumnus]
+    
+    var fetchingAlumni: Bool = false
+    
+    init(alumni: [Alumnus] = []){
         self.alumni = alumni
         Task{
-            try await getalumni()
+            try await getAlumni()
         }
     }
     
-    func getalumni() async throws {
-        fetchingalumni = true
+    func getAlumni() async throws {
+        fetchingAlumni = true
         do {
-            let results: [Info] = try await supabase
+            let results: [Alumnus] = try await supabase
                 .from("alumni")
                 .select()
                 .order("id", ascending: true)
@@ -28,7 +31,8 @@ class ViewModel {
                 .value
             
             self.alumni = results
-        fetchingalumni = false
+            fetchingAlumni = false
+            
         } catch {
             debugPrint(error)
         }
@@ -41,14 +45,14 @@ class ViewModel {
             
             // Get all the to-dos
             Task {
-                try await getalumni()
+                try await getAlumni()
             }
             
         } else {
             
             // Get a filtered list of to-dos
             do {
-                let results: [Info] = try await supabase
+                let results: [Alumnus] = try await supabase
                     .from("alumni")
                     .select()
                     .ilike("name", pattern: "%\(searchTerm)%")
