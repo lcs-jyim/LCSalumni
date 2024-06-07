@@ -30,7 +30,7 @@
 		BFD20A742C1235DF002B8862 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = BFD20A732C1235DF002B8862 /* Realtime */; };
 		BFD20A762C1235DF002B8862 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = BFD20A752C1235DF002B8862 /* Storage */; };
 		BFD20A782C1235DF002B8862 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = BFD20A772C1235DF002B8862 /* Supabase */; };
-		BFD20A7A2C123891002B8862 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD20A792C123891002B8862 /* helpers.swift */; };
+		BFD20A7A2C123891002B8862 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD20A792C123891002B8862 /* Supabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		BFAB80472C0E435B000A22C6 /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
 		BFAB80492C0E447D000A22C6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		BFD20A6A2C11ED74002B8862 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		BFD20A792C123891002B8862 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		BFD20A792C123891002B8862 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 		BFD20A7B2C123897002B8862 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BFD20A792C123891002B8862 /* helpers.swift */,
+				BFD20A792C123891002B8862 /* Supabase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD20A7A2C123891002B8862 /* helpers.swift in Sources */,
+				BFD20A7A2C123891002B8862 /* Supabase.swift in Sources */,
 				BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */,
 				BF5E50342C0A24E5004E3FBB /* DetailView.swift in Sources */,
 				BFA3D02A2C08ABD100BAF29C /* FilterView.swift in Sources */,
