@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LandingViews: View {
-    
+    //Initializing Search Text
     @State var searchText = ""
+    //Initializing Filter view
     @State var isSheetPresented = false
-    @State var recent: [Alumnus] = recentGrads
-    @State var notorious: [Alumnus] = famousAlumni
+////    @State var recent: [Alumnus] = recentGrads
+////    @State var notorious: [Alumnus] = famousAlumni
+    @State var viewModel = LandingViewModel()
     
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
@@ -29,20 +31,19 @@ struct LandingViews: View {
                                 .resizable()
                                 .frame(width: 10,height:22)
                                 .bold()
-                         }
+                        }
                         
                         
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                               
-                                ForEach($recent) {$currentStudent in
+                                ForEach($viewModel.alumni) {$currentStudent in
                                     NavigationLink{
-                                        DetailView(Person:$currentStudent)
+                                        DetailView(person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(person:currentStudent)
-                                            .foregroundColor(.black)
+                                        BasicStudentInfo(currentAlumnus:currentStudent)
                                     }
+                                    .foregroundColor(.black)
                                 }
                             }
                         }
@@ -60,14 +61,13 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach($notorious) { $currentStudent in
+                                ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue}) { $currentStudent in
                                     NavigationLink{
-                                        DetailView(Person:$currentStudent)
+                                        DetailView(person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(person:currentStudent)
-                                            .foregroundColor(.black)
+                                        BasicStudentInfo(currentAlumnus:currentStudent )
                                     }
-                                    
+                                    .foregroundColor(.black)
                                 }
                             }
                         }
@@ -78,29 +78,30 @@ struct LandingViews: View {
                     Spacer()
                 }
             }
+            .environment(viewModel)
             .navigationTitle("Title to be determined")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
-                            .padding(.leading,10)
-                            .toolbar{
-                                ToolbarItem(placement: .topBarTrailing){
-                                    Button(action:{isSheetPresented.toggle()}){
-                                        Image(systemName: "line.3.horizontal.decrease.circle")
-                                            
-                                            }
-                                    .sheet(isPresented: $isSheetPresented) {
-                                        FilterView()
-                                            .presentationDetents([.large, .medium,.fraction(0.63)])
-                                    }
-                                    
-                                }
-                            }
+            .padding(.leading,10)
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing){
+                    Button(action:{isSheetPresented.toggle()}){
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                        
+                    }
+                    .sheet(isPresented: $isSheetPresented) {
+                        FilterView()
+                            .presentationDetents([.large, .medium,.fraction(0.63)])
+                    }
                     
                 }
-                
             }
+            
         }
-    
+        
+    }
+}
+
 #Preview {
     LandingViews()
 }

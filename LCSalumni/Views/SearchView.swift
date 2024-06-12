@@ -9,23 +9,24 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-    @State var all:[Alumnus] = allStudents
+    @State var viewModel = LandingViewModel()
     var body: some View {
-        NavigationStack{
-            List($all.sorted(by: { leftHandSide, rightHandSide in
-                leftHandSide.name.wrappedValue < rightHandSide.name.wrappedValue
-            })) { $currentStudent in
-                NavigationLink{
-                    DetailView(Person:$currentStudent)
-                }label: {
-                    DetailListView(Person:currentStudent)
-                        .foregroundColor(.black)
-                }
-                
-            }
-            .navigationTitle("Search")
-        }
-        .searchable(text: $searchText)
+//        NavigationStack{
+//            List(viewModel.alumni.sorted(by: { leftHandSide, rightHandSide in
+//                leftHandSide.name < rightHandSide.name
+//            })) { $currentStudent in
+//                NavigationLink{
+//                    DetailView(person:$currentStudent.wrappedValue)
+//                }label: {
+//                    DetailListView(currentAlumnus: currentStudent)
+//                        .foregroundColor(.black)
+//                }
+//                
+//            }
+//            .navigationTitle("Search")
+//        }
+//        .searchable(text: $searchText)
+        Text("Search View")
         
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 @Observable
-class ViewModel {
+class LandingViewModel: Observable {
     
     var alumni: [Alumnus]
     

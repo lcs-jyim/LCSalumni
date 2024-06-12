@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct BasicStudentInfo: View {
-    let person: Alumnus
+//    let person: Alumnus
+    let currentAlumnus:Alumnus
     
+    @Environment(LandingViewModel.self) var viewModel
     var body: some View {
         
         VStack(alignment:.leading){
-            Image(person.image)
+            Image(currentAlumnus.image)
                 .resizable()
                 .frame(width: 88,height: 108)
                 .cornerRadius(5.0)
-            Text(person.name)
+            Text(currentAlumnus.name)
                 .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-            Text(person.gradYearSimp)
+            Text("'"+"\(currentAlumnus.gradYear % 100)")
                 .font(.system(size:10 ))
                 .padding(.leading,5)
         }
@@ -34,5 +36,5 @@ struct BasicStudentInfo: View {
 
 
 #Preview {
-    BasicStudentInfo(person: vincentCloutier)
+    BasicStudentInfo(currentAlumnus: vincentCloutier)
 }

@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct DetailListView: View {
-    @State var Person: Alumnus
+//    @State var person: Alumnus
+    let currentAlumnus:Alumnus
+    @Environment(LandingViewModel.self) var viewModel
     var body: some View {
         HStack{
             HStack{
-                Image(Person.image)
+                Image(currentAlumnus.image)
                     .resizable()
                     .frame(width: 60,height: 80)
                     .offset(y:15)
                     .clipShape(.circle)
                 VStack(alignment:.leading){
-                    Text(Person.name)
+                    Text(currentAlumnus.name)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text(Person.gradYearSimp)
+                    Text("'"+"\(currentAlumnus.gradYear % 100)")
                 }
                         
                 }
@@ -30,5 +32,5 @@ struct DetailListView: View {
 }
 
 #Preview {
-    DetailListView(Person:davidMiller)
+    DetailListView(currentAlumnus: davidMiller)
 }
