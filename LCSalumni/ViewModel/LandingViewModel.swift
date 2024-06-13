@@ -75,14 +75,14 @@ class LandingViewModel: Observable {
             
             // Get all the to-dos
             Task {
-                try await getTodos()
+                try await getAlumni()
             }
             
         } else {
             
             // Get a filtered list of to-dos
             do {
-                let results: [TodoItem] = try await supabase
+                let results: [Alumnus] = try await supabase
                     .from("todos")
                     .select()
                     .ilike("title", pattern: "%\(searchTerm)%")
@@ -90,7 +90,7 @@ class LandingViewModel: Observable {
                     .execute()
                     .value
                 
-                self.todos = results
+                self.alumni = results
                 
             } catch {
                 debugPrint(error)

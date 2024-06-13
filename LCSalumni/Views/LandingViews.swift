@@ -37,7 +37,7 @@ struct LandingViews: View {
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach($viewModel.alumni) {$currentStudent in
+                                ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue==false}) {$currentStudent in
                                     NavigationLink{
                                         DetailView(person:$currentStudent)
                                     }label: {

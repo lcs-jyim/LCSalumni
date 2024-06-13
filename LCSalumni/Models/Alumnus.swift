@@ -10,7 +10,7 @@ import SwiftUI
 struct Alumnus: Identifiable, Codable {
     var id: Int?
     var name: String
-    let image: String
+    let image: String?
     let gender: String
     let sigAchievement:String
     let description: String

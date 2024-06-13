@@ -19,9 +19,15 @@ struct DetailView: View {
             ScrollView(.vertical){
                 VStack{
                     HStack{
-                        Image(person.image)
-                            .resizable()
-                            .frame(width: 151,height:180)
+                        if let image = person.image {
+                            Image(image)
+                                .resizable()
+                                .frame(width: 151,height:180)
+                        }
+                        else{
+                            Text("No Image")
+                        }
+                       
                         VStack(alignment: .leading){
                             Text("Name: "+person.name)
                             Text("Graduation Year: "+"\(person.gradYear)")
@@ -53,7 +59,8 @@ struct DetailView: View {
             .ignoresSafeArea()
             
         }
-        .navigationTitle(person.name+"'"+"\(person.gradYear % 100)")
+        
+        .navigationTitle(person.name+"'"+String(format: "'%02d", person.gradYear % 100))
         //        .toolbar{
         //            ToolbarItem(placement:.topBarTrailing){
         //                Button(action:{person.isFavorite.toggle()}){

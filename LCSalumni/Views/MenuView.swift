@@ -10,20 +10,27 @@ import SwiftUI
 struct MenuView: View {
     //    let person: Alumnus
     let currentAlumnus:Alumnus
-    
     @Environment(LandingViewModel.self) var viewModel
+    
+
     var body: some View {
         
         VStack(alignment:.leading){
-            Image(currentAlumnus.image)
-                .resizable()
-                .frame(width: 88,height: 108)
-                .cornerRadius(5.0)
+            if let image = currentAlumnus.image {
+                Image(image)
+                    .resizable()
+                    .frame(width: 88,height: 108)
+                    .cornerRadius(5.0)
+            } else {
+                Text("No Image")
+            }
+            
+            
             Text(currentAlumnus.name)
                 .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-            Text("'"+"\(currentAlumnus.gradYear % 100)")
+            Text("'"+String(format: "'%02d", currentAlumnus.gradYear % 100))
                 .font(.system(size:10 ))
                 .padding(.leading,5)
         }
