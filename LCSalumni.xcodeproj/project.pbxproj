@@ -14,7 +14,7 @@
 		BF1367992C00EC70006FF408 /* LCSalumniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367982C00EC70006FF408 /* LCSalumniTests.swift */; };
 		BF1367A32C00EC70006FF408 /* LCSalumniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367A22C00EC70006FF408 /* LCSalumniUITests.swift */; };
 		BF1367A52C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */; };
-		BF1367B32C00F742006FF408 /* BasicStudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B22C00F741006FF408 /* BasicStudentInfo.swift */; };
+		BF1367B32C00F742006FF408 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B22C00F741006FF408 /* MenuView.swift */; };
 		BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B42C015AE5006FF408 /* LandingViews.swift */; };
 		BF1367B82C015D03006FF408 /* Alumnus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1367B72C015D03006FF408 /* Alumnus.swift */; };
 		BF5E50342C0A24E5004E3FBB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E50332C0A24E5004E3FBB /* DetailView.swift */; };
@@ -31,6 +31,7 @@
 		BFD20A762C1235DF002B8862 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = BFD20A752C1235DF002B8862 /* Storage */; };
 		BFD20A782C1235DF002B8862 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = BFD20A772C1235DF002B8862 /* Supabase */; };
 		BFD20A7A2C123891002B8862 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD20A792C123891002B8862 /* Supabase.swift */; };
+		BFE0FF652C1A744C00D303B9 /* FavoriteAlumni.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0FF642C1A744C00D303B9 /* FavoriteAlumni.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,7 @@
 		BF13679E2C00EC70006FF408 /* LCSalumniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCSalumniUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1367A22C00EC70006FF408 /* LCSalumniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSalumniUITests.swift; sourceTree = "<group>"; };
 		BF1367A42C00EC71006FF408 /* LCSalumniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSalumniUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BF1367B22C00F741006FF408 /* BasicStudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStudentInfo.swift; sourceTree = "<group>"; };
+		BF1367B22C00F741006FF408 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		BF1367B42C015AE5006FF408 /* LandingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViews.swift; sourceTree = "<group>"; };
 		BF1367B72C015D03006FF408 /* Alumnus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alumnus.swift; sourceTree = "<group>"; };
 		BF5E50332C0A24E5004E3FBB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		BFAB80492C0E447D000A22C6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		BFD20A6A2C11ED74002B8862 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		BFD20A792C123891002B8862 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		BFE0FF642C1A744C00D303B9 /* FavoriteAlumni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAlumni.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +170,8 @@
 		BF1367B12C00F318006FF408 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF1367B22C00F741006FF408 /* BasicStudentInfo.swift */,
 				BF1367B42C015AE5006FF408 /* LandingViews.swift */,
+				BF1367B22C00F741006FF408 /* MenuView.swift */,
 				BF6AC2582C0528D300A112AF /* FilterItemView.swift */,
 				BFA3D0292C08ABD100BAF29C /* FilterView.swift */,
 				BFA3D02B2C08BBB400BAF29C /* SearchView.swift */,
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				BF1367B72C015D03006FF408 /* Alumnus.swift */,
+				BFE0FF642C1A744C00D303B9 /* FavoriteAlumni.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,9 +351,10 @@
 				BFD20A7A2C123891002B8862 /* Supabase.swift in Sources */,
 				BF1367B52C015AE5006FF408 /* LandingViews.swift in Sources */,
 				BF5E50342C0A24E5004E3FBB /* DetailView.swift in Sources */,
+				BFE0FF652C1A744C00D303B9 /* FavoriteAlumni.swift in Sources */,
 				BFA3D02A2C08ABD100BAF29C /* FilterView.swift in Sources */,
 				BF6AC2592C0528D300A112AF /* FilterItemView.swift in Sources */,
-				BF1367B32C00F742006FF408 /* BasicStudentInfo.swift in Sources */,
+				BF1367B32C00F742006FF408 /* MenuView.swift in Sources */,
 				BFA3D02C2C08BBB400BAF29C /* SearchView.swift in Sources */,
 				BF13678A2C00EC6D006FF408 /* ContentView.swift in Sources */,
 				BFAB804A2C0E447D000A22C6 /* FavoritesView.swift in Sources */,

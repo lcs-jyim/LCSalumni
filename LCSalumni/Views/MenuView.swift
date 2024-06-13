@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct BasicStudentInfo: View {
-//    let person: Alumnus
+struct MenuView: View {
+    //    let person: Alumnus
     let currentAlumnus:Alumnus
     
     @Environment(LandingViewModel.self) var viewModel
@@ -36,5 +36,5 @@ struct BasicStudentInfo: View {
 
 
 #Preview {
-    BasicStudentInfo(currentAlumnus: vincentCloutier)
+    MenuView(currentAlumnus: vincentCloutier)
 }

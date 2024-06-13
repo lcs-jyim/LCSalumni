@@ -29,10 +29,9 @@ struct Alumnus: Identifiable, Codable {
         case description
         case image
         case isFamous
-    
+        
         
     }
-    
 }
 
 let vincentCloutier = Alumnus(name: "Vincent Cloutier", image: "Vincent", gender: "M", sigAchievement: " ", description: """

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailListView: View {
-//    @State var person: Alumnus
+    //    @State var person: Alumnus
     let currentAlumnus:Alumnus
     @Environment(LandingViewModel.self) var viewModel
     var body: some View {
@@ -25,8 +25,8 @@ struct DetailListView: View {
                         .fontWeight(.semibold)
                     Text("'"+"\(currentAlumnus.gradYear % 100)")
                 }
-                        
-                }
+                
+            }
         }
     }
 }

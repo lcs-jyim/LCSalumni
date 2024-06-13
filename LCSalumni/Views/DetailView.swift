@@ -43,7 +43,7 @@ struct DetailView: View {
                     
                 }
             }
-//            
+            //            
             VStack{
                 Spacer()
                 Rectangle()
@@ -54,13 +54,13 @@ struct DetailView: View {
             
         }
         .navigationTitle(person.name+"'"+"\(person.gradYear % 100)")
-//        .toolbar{
-//            ToolbarItem(placement:.topBarTrailing){
-//                Button(action:{person.isFavorite.toggle()}){
-//                    Image(systemName: person.isFavorite ? "star.fill" : "star")
-//                }
-//            }
-//        }
+        //        .toolbar{
+        //            ToolbarItem(placement:.topBarTrailing){
+        //                Button(action:{person.isFavorite.toggle()}){
+        //                    Image(systemName: person.isFavorite ? "star.fill" : "star")
+        //                }
+        //            }
+        //        }
     }
 }
 

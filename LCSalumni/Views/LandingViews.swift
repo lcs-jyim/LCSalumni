@@ -12,8 +12,8 @@ struct LandingViews: View {
     @State var searchText = ""
     //Initializing Filter view
     @State var isSheetPresented = false
-////    @State var recent: [Alumnus] = recentGrads
-////    @State var notorious: [Alumnus] = famousAlumni
+    ////    @State var recent: [Alumnus] = recentGrads
+    ////    @State var notorious: [Alumnus] = famousAlumni
     @State var viewModel = LandingViewModel()
     
     var body: some View {
@@ -41,7 +41,7 @@ struct LandingViews: View {
                                     NavigationLink{
                                         DetailView(person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(currentAlumnus:currentStudent)
+                                        MenuView(currentAlumnus:currentStudent)
                                     }
                                     .foregroundColor(.black)
                                 }
@@ -65,7 +65,7 @@ struct LandingViews: View {
                                     NavigationLink{
                                         DetailView(person:$currentStudent)
                                     }label: {
-                                        BasicStudentInfo(currentAlumnus:currentStudent )
+                                        MenuView(currentAlumnus:currentStudent )
                                     }
                                     .foregroundColor(.black)
                                 }
