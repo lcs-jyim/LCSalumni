@@ -59,8 +59,7 @@ struct DetailView: View {
             .ignoresSafeArea()
             
         }
-        
-        .navigationTitle(person.name+"'"+String(format: "'%02d", person.gradYear % 100))
+        .navigationTitle(person.name+"'"+String(format: "%02d", person.gradYear % 100))
         //        .toolbar{
         //            ToolbarItem(placement:.topBarTrailing){
         //                Button(action:{person.isFavorite.toggle()}){
