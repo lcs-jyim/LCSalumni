@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuView: View {
     //    let person: Alumnus
     let currentAlumnus:Alumnus
-    @Environment(LandingViewModel.self) var viewModel
+//    @Environment(LandingViewModel.self) var viewModel
     
     
 
@@ -31,7 +31,7 @@ struct MenuView: View {
                 .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-            Text("'"+String(format: "%02d", currentAlumnus.gradYear % 100))
+            Text("'"+String(format: "%2d", currentAlumnus.gradYear % 100))
                 .font(.system(size:10 ))
                 .padding(.leading,5)
         }

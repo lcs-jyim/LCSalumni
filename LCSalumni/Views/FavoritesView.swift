@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @State var all:[Alumnus] = allStudents
+//    @State var all:[Alumnus] = allStudents
+    @State var viewModel = LandingViewModel()
+   
     var body: some View {
-        //        NavigationStack{
-        //                    List{
-        //                        ForEach($all.filter{Student in Student.isFavorite.wrappedValue}) {$currentStudent in
-        //                            let _ = dump(all)
-        //                            NavigationLink{
-        //                                DetailView(person:$currentStudent)
-        //                            }label: {
-        //                                DetailListView(person:currentStudent)
-        //                                    .foregroundColor(.black)
-        //                            }
-        //                        }
-        //                    }
-        //                    .navigationTitle("Favorites")
-        //        }
-        Text("Favorites View")
+                NavigationStack{
+                            List{
+                                ForEach($viewModel.alumni.filter{$0.isFavorite.wrappedValue}) {$currentStudent in
+                                    NavigationLink{
+                                        DetailView(person:$currentStudent)
+                                            .onTapGesture{
+                                                viewModel.update(Student:currentStudent)
+                                            }
+                                            .environment(viewModel)
+                                    }label: {
+                                        DetailListView(currentAlumnus:currentStudent)
+                                            .foregroundColor(.black)
+                                    }
+                                }
+                            }
+                            .navigationTitle("Favorites")
+                }
+//        Text("Favorites View")
         
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 struct DetailView: View {
     @Binding var person: Alumnus
-    @Environment(LandingViewModel.self) var viewModel
+    @Environment(LandingViewModel.self) var viewModel 
     var body: some View {
         ZStack{
             Rectangle()
@@ -27,7 +27,7 @@ struct DetailView: View {
                         else{
                             Text("No Image")
                         }
-                       
+                        
                         VStack(alignment: .leading){
                             Text("Name: "+person.name)
                             Text("Graduation Year: "+"\(person.gradYear)")
@@ -49,7 +49,6 @@ struct DetailView: View {
                     
                 }
             }
-            //            
             VStack{
                 Spacer()
                 Rectangle()
@@ -58,17 +57,23 @@ struct DetailView: View {
             }
             .ignoresSafeArea()
             
+
+            .navigationTitle(person.name+"'"+String(format: "%02d", person.gradYear % 100))
         }
-        .navigationTitle(person.name+"'"+String(format: "%02d", person.gradYear % 100))
-        //        .toolbar{
-        //            ToolbarItem(placement:.topBarTrailing){
-        //                Button(action:{person.isFavorite.toggle()}){
-        //                    Image(systemName: person.isFavorite ? "star.fill" : "star")
-        //                }
-        //            }
-        //        }
+        .toolbar{
+            ToolbarItem(placement:.topBarTrailing){
+                Image(systemName: person.isFavorite ? "star.fill" : "star")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .onTapGesture{
+                        person.isFavorite.toggle()
+                        viewModel.update(Student:person)
+                    }
+            }
+        }
     }
+    
 }
+
 
 #Preview {
     NavigationStack {

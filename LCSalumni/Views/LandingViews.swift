@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LandingViews: View {
+   
     //Initializing Search Text
     @State var searchText = ""
     //Initializing Filter view
@@ -15,7 +16,7 @@ struct LandingViews: View {
     ////    @State var recent: [Alumnus] = recentGrads
     ////    @State var notorious: [Alumnus] = famousAlumni
     @State var viewModel = LandingViewModel()
-    
+   
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
@@ -40,6 +41,11 @@ struct LandingViews: View {
                                 ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue == false}) {$currentStudent in
                                     NavigationLink{
                                         DetailView(person:$currentStudent)
+                                            .environment(viewModel)
+                                            .onTapGesture{
+                                                viewModel.update(Student:currentStudent)
+                                            }
+                                        
                                     }label: {
                                         MenuView(currentAlumnus:currentStudent)
                                     }
@@ -64,6 +70,10 @@ struct LandingViews: View {
                                 ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue}) { $currentStudent in
                                     NavigationLink{
                                         DetailView(person:$currentStudent)
+                                            .environment(viewModel)
+                                            .onTapGesture{
+                                                viewModel.update(Student:currentStudent)
+                                            }
                                     }label: {
                                         MenuView(currentAlumnus:currentStudent )
                                     }
@@ -78,10 +88,15 @@ struct LandingViews: View {
                     Spacer()
                 }
             }
-            .environment(viewModel)
+            //            .environment(viewModel)
             .navigationTitle("Title to be determined")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
+            .onChange(of: searchText) {
+                Task {
+                    try await viewModel.filterAlumni(on: searchText)
+                }
+            }
             .padding(.leading,10)
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){

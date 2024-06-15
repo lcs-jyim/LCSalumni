@@ -10,7 +10,6 @@ import SwiftUI
 struct DetailListView: View {
     //    @State var person: Alumnus
     let currentAlumnus:Alumnus
-    @Environment(LandingViewModel.self) var viewModel
     var body: some View {
         HStack{
             HStack{
@@ -27,7 +26,7 @@ struct DetailListView: View {
                     Text(currentAlumnus.name)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text("'"+String(format: "'%02d", currentAlumnus.gradYear % 100))
+                    Text("'"+String(format: "%02d", currentAlumnus.gradYear % 100))
                 }
                 
             }

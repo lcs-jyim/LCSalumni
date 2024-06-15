@@ -9,7 +9,9 @@ import SwiftUI
 
 @main
 struct LCSalumniApp: App {
+    
     var body: some Scene {
+        
         WindowGroup{
             TabView {
                 LandingViews()
@@ -17,6 +19,7 @@ struct LCSalumniApp: App {
                         Image(
                             systemName: "house")
                         Text("Home")
+                        
                     }
                 SearchView()
                     .tabItem {
@@ -28,6 +31,7 @@ struct LCSalumniApp: App {
                         Image(systemName: "star.fill")
                         Text("Favorites")
                     }
+                
 
             }
 
