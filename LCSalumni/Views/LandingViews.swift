@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct LandingViews: View {
-   
+    //MARK: Computed Properties
     //Initializing Search Text
     @State var searchText = ""
     //Initializing Filter view
     @State var isSheetPresented = false
-    ////    @State var recent: [Alumnus] = recentGrads
-    ////    @State var notorious: [Alumnus] = famousAlumni
+    //Initializing viewModel in all view
     @State var viewModel = LandingViewModel()
-   
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
             VStack {
+                //Top "recently Grads" section
                 ScrollView(.vertical){
                     VStack(alignment: .leading){
                         HStack {
@@ -33,9 +32,6 @@ struct LandingViews: View {
                                 .frame(width: 10,height:22)
                                 .bold()
                         }
-                        
-                        
-                        
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                 ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue == false}) {$currentStudent in
@@ -45,7 +41,6 @@ struct LandingViews: View {
                                             .onTapGesture{
                                                 viewModel.update(Student:currentStudent)
                                             }
-                                        
                                     }label: {
                                         MenuView(currentAlumnus:currentStudent)
                                     }
@@ -65,6 +60,7 @@ struct LandingViews: View {
                                 .bold()
                         }
                         .padding(.vertical,5)
+                        //bottom "Famous Alumni" section
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                 ForEach($viewModel.alumni.filter{$0.isFamous.wrappedValue}) { $currentStudent in
@@ -82,15 +78,14 @@ struct LandingViews: View {
                             }
                         }
                         .frame(height:270)
-                        
                     }
                     .padding(.leading,10)
                     Spacer()
                 }
             }
-            //            .environment(viewModel)
             .navigationTitle("Title to be determined")
             .navigationBarTitleDisplayMode(.inline)
+            //Search Field
             .searchable(text: $searchText)
             .onChange(of: searchText) {
                 Task {
@@ -98,22 +93,19 @@ struct LandingViews: View {
                 }
             }
             .padding(.leading,10)
+            //Toggle Filters
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){
                     Button(action:{isSheetPresented.toggle()}){
                         Image(systemName: "line.3.horizontal.decrease.circle")
-                        
                     }
                     .sheet(isPresented: $isSheetPresented) {
                         FilterView()
                             .presentationDetents([.large, .medium,.fraction(0.63)])
                     }
-                    
                 }
             }
-            
         }
-        
     }
 }
 
@@ -121,6 +113,4 @@ struct LandingViews: View {
     LandingViews()
 }
 
-//#Preview {
-//    filterView()
-//}
+

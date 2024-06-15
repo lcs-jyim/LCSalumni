@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText = ""
-//    @State var viewModel = LandingViewModel()
+    //    @State var viewModel = LandingViewModel()
     var body: some View {
         //        NavigationStack{
         //            List(viewModel.alumni.sorted(by: { leftHandSide, rightHandSide in

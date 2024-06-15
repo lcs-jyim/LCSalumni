@@ -66,8 +66,6 @@ struct FilterView: View {
                                 }
                             }
                         }
-                        
-                        
                     }
                 }
                 .navigationTitle("Filter By...")
@@ -81,16 +79,12 @@ struct FilterView: View {
                         Button(action:{}){
                             Text("Done")
                         }
-                        
                     }
                 }
             }
         }
-        
     }
-    
 }
-
 #Preview {
     FilterView()
 }

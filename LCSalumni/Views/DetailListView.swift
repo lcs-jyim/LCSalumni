@@ -13,6 +13,7 @@ struct DetailListView: View {
     var body: some View {
         HStack{
             HStack{
+                //when No image is stored, show Text "No Image"
                 if let image = currentAlumnus.image {
                     Image(image)
                         .resizable()
@@ -28,7 +29,6 @@ struct DetailListView: View {
                         .fontWeight(.semibold)
                     Text("'"+String(format: "%02d", currentAlumnus.gradYear % 100))
                 }
-                
             }
         }
     }

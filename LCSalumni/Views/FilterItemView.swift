@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FilterItemView: View {
+    //MARK: Computed Properties
     let filterObject:Uni
     var body: some View {
         Text(filterObject.universalItem)
@@ -15,13 +16,8 @@ struct FilterItemView: View {
             .padding(.horizontal,15)
             .padding(.vertical,2)
             .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(.cyan))
-        
-        
-        
-        
     }
 }
-
 #Preview {
     FilterItemView(filterObject:UofT)
 }

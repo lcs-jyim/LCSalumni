@@ -7,8 +7,9 @@
 
 import SwiftUI
 struct DetailView: View {
+    //MARK: Computed Properties
     @Binding var person: Alumnus
-    @Environment(LandingViewModel.self) var viewModel 
+    @Environment(LandingViewModel.self) var viewModel
     var body: some View {
         ZStack{
             Rectangle()
@@ -19,6 +20,7 @@ struct DetailView: View {
             ScrollView(.vertical){
                 VStack{
                     HStack{
+                        //when No image is stored, show Text "No Image"
                         if let image = person.image {
                             Image(image)
                                 .resizable()
@@ -27,7 +29,6 @@ struct DetailView: View {
                         else{
                             Text("No Image")
                         }
-                        
                         VStack(alignment: .leading){
                             Text("Name: "+person.name)
                             Text("Graduation Year: "+"\(person.gradYear)")
@@ -40,13 +41,11 @@ struct DetailView: View {
                     VStack{
                         Text("Description:")
                             .font(.title)
-                        
                         Text(person.description)
                             .foregroundColor(.yellow)
                     }
                     .padding(.vertical,20)
                     .background(RoundedRectangle(cornerRadius: 20).fill(.gray))
-                    
                 }
             }
             VStack{
@@ -56,14 +55,14 @@ struct DetailView: View {
                     .frame(height:40)
             }
             .ignoresSafeArea()
-            
-
             .navigationTitle(person.name+"'"+String(format: "%02d", person.gradYear % 100))
         }
         .toolbar{
             ToolbarItem(placement:.topBarTrailing){
+                //Check The database for if the Person is Favorite or not
                 Image(systemName: person.isFavorite ? "star.fill" : "star")
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                //Change Data Stored in Database
                     .onTapGesture{
                         person.isFavorite.toggle()
                         viewModel.update(Student:person)
@@ -71,7 +70,6 @@ struct DetailView: View {
             }
         }
     }
-    
 }
 
 
