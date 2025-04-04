@@ -15,7 +15,7 @@ struct FavoritesView: View {
                     List{
                         ForEach($all.filter{Student in Student.isFavorite.wrappedValue}) {$currentStudent in
                             NavigationLink{
-                                DetailView(Person:$currentStudent)
+                                DetailView(Person:currentStudent)
                             }label: {
                                 DetailListView(Person:currentStudent)
                                     .foregroundColor(.black)

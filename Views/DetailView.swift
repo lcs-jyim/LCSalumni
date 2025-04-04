@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct DetailView: View {
-    @Binding var Person: Info
+    @Bindable var Person: Info
     var body: some View {
         NavigationStack{
             ZStack{
@@ -55,14 +55,7 @@ struct DetailView: View {
             }
             .navigationTitle(Person.name+Person.gradYearSimp)
             .toolbar{
-//                ToolbarItem(placement:.topBarLeading){
-//                    Button(action:{}){
-//                        HStack{
-//                            Image(systemName: "chevron.left")
-//                            Text("Back to Home")
-//                        }
-//                    }
-//                }
+//
                 ToolbarItem(placement:.topBarTrailing){
                     Button(action:{Person.isFavorite.toggle()}){
                         Image(systemName: Person.isFavorite ? "star.fill" : "star")
@@ -74,5 +67,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(Person: .constant(davidMiller))
+    DetailView(Person: davidMiller)
 }

@@ -34,9 +34,9 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                
-                                ForEach($recent) {$currentStudent in
+                                ForEach(recent) {currentStudent in
                                     NavigationLink{
-                                        DetailView(Person:$currentStudent)
+                                        DetailView(Person:currentStudent)
                                     }label: {
                                         BasicStudentInfo(Person:currentStudent)
                                             .foregroundColor(.black)
@@ -58,9 +58,9 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach($Notorious) {$currentStudent in
+                                ForEach(Notorious) {currentStudent in
                                     NavigationLink{
-                                        DetailView(Person:$currentStudent)
+                                        DetailView(Person:currentStudent)
                                     }label: {
                                         BasicStudentInfo(Person:currentStudent)
                                             .foregroundColor(.black)
