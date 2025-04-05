@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FavoritesView: View {
     @State var all:[Info] = allStudents
-    @State var recent:[Info] = recentlyGrads
     var body: some View {
         NavigationStack{
                     List{

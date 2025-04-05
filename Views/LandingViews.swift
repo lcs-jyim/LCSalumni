@@ -9,9 +9,6 @@ import SwiftUI
 
 struct LandingViews: View {
     @State var searchText = ""
-    @State var isSheetPresented = false
-    @State var recent:[Info] = recentlyGrads
-    @State var Notorious:[Info] = FamousAlumni
     
     var filteredperson: [Info] {
         if searchText.isEmpty {
@@ -86,23 +83,10 @@ struct LandingViews: View {
                     Spacer()
                 }
             }
-            .navigationTitle("Title to be determined")
+            .navigationTitle("LCS Alumni")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
                             .padding(.leading,10)
-                            .toolbar{
-                                ToolbarItem(placement: .topBarTrailing){
-                                    Button(action:{isSheetPresented.toggle()}){
-                                        Image(systemName: "line.3.horizontal.decrease.circle")
-                                            
-                                            }
-                                    .sheet(isPresented: $isSheetPresented) {
-                                        FilterView()
-                                            .presentationDetents([.large, .medium,.fraction(0.63)])
-                                    }
-                                    
-                                }
-                            }
                     
                 }
                 
