@@ -12,6 +12,16 @@ struct LandingViews: View {
     @State var isSheetPresented = false
     @State var recent:[Info] = recentlyGrads
     @State var Notorious:[Info] = FamousAlumni
+    
+    var filteredperson: [Info] {
+        if searchText.isEmpty {
+            return allStudents
+        } else {
+            return allStudents.filter { person in
+                person.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
     var body: some View {
         let twoRows  = [GridItem(), GridItem()]
         NavigationStack{
@@ -34,7 +44,7 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                
-                                ForEach(recent) {currentStudent in
+                                ForEach(filteredperson.filter{Student in Student.isFamous == false})  {currentStudent in
                                     NavigationLink{
                                         DetailView(Person:currentStudent)
                                     }label: {
@@ -58,7 +68,7 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach(Notorious) {currentStudent in
+                                ForEach(filteredperson.filter{Student in Student.isFamous}) {currentStudent in
                                     NavigationLink{
                                         DetailView(Person:currentStudent)
                                     }label: {
