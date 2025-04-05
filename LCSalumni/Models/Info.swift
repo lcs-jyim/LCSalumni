@@ -5,8 +5,8 @@
 //  Created by junxi Yim on 2024/5/24.
 //
 
-import SwiftUI
-import Observation
+import Foundation
+
 @Observable
 class Info: Identifiable {
     let id = UUID()

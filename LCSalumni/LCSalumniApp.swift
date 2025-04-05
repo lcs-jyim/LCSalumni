@@ -18,11 +18,6 @@ struct LCSalumniApp: App {
                             systemName: "house")
                         Text("Home")
                     }
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
                 FavoritesView()
                     .tabItem {
                         Image(systemName: "star.fill")
