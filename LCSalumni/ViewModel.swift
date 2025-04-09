@@ -17,4 +17,11 @@ func filterPersons(from people: [Info], using searchText: String) -> [Info] {
     }
 }
 
+func famousProfileSection(from people:[Info], isFamous:Bool) -> [Info] {
+    if isFamous {
+        return people.filter { $0.isFamous }
+    } else {
+        return people.filter { !$0.isFamous }
+    }
+}
 

@@ -35,7 +35,7 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                
-                                ForEach(filteredProfiles.filter{Student in Student.isFamous == false})  {currentStudent in
+                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: false))  {currentStudent in
                                     NavigationLink{
                                         DetailView(Person:currentStudent)
                                     }label: {
@@ -59,7 +59,7 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach(filteredProfiles.filter{Student in Student.isFamous}) {currentStudent in
+                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: true)) {currentStudent in
                                     NavigationLink{
                                         DetailView(Person:currentStudent)
                                     }label: {
