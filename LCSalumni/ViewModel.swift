@@ -25,3 +25,12 @@ func famousProfileSection(from people:[Info], isFamous:Bool) -> [Info] {
     }
 }
 
+func indicesOfFavorites(in people: [Info]) -> [Int] {
+    var favoriteIndices: [Int] = []
+    for (index, person) in people.enumerated() {
+        if person.isFavorite {
+            favoriteIndices.append(index)
+        }
+    }
+    return favoriteIndices
+}
