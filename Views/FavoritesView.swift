@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @State var all:[Info] = Favorites(in: allStudents)
+    @State var all:[alumnusInfo] = Favorites(in: allAlumni)
     var body: some View {
         NavigationStack{
             HStack{
                 Spacer()
                             Button("Refresh") {
-                                        all = Favorites(in: allStudents)
+                                        all = Favorites(in: allAlumni)
                                     }
                                     .padding()
                                     .background(Color.blue)
@@ -24,11 +24,11 @@ struct FavoritesView: View {
                                 .padding([.top, .horizontal])
                 List{
                     
-                    ForEach($all) {$currentStudent in
+                    ForEach($all) {$currentAlumnus in
                         NavigationLink{
-                            DetailView(Person:currentStudent)
+                            DetailView(Alumnus:currentAlumnus)
                         }label: {
-                            DetailListView(Person:currentStudent)
+                            FavoritesLabelView(Alumnus:currentAlumnus)
                                 .foregroundColor(.black)
                         }
                     }

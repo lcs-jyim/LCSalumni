@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct DetailView: View {
-    @Bindable var Person: Info
+    @Bindable var Alumnus: alumnusInfo
     var body: some View {
         NavigationStack{
             ZStack{
@@ -19,13 +19,15 @@ struct DetailView: View {
                 ScrollView(.vertical){
                     VStack{
                         HStack{
-                            Image(Person.image)
+                            Image(Alumnus.image)
                                 .resizable()
                                 .frame(width: 151,height:180)
+                                
                             VStack(alignment: .leading){
-                                Text("Name: "+Person.name)
-                                Text("Graduation Year: "+"\(Person.gradYear)")
-                                Text("Significant Achievements: "+Person.sigAchievement)
+                                Text("Name: "+Alumnus.name)
+                                    
+                                Text("Graduation Year: "+"\(Alumnus.gradYear)")
+                                Text("Significant Achievements: "+Alumnus.sigAchievement)
                                     .lineLimit(3)
                             }
                             .padding(20)
@@ -35,7 +37,7 @@ struct DetailView: View {
                             Text("Description:")
                                 .font(.title)
                             
-                            Text(Person.description)
+                            Text(Alumnus.description)
                                 .foregroundColor(.yellow)
                         }
                         .padding(.vertical,20)
@@ -53,12 +55,12 @@ struct DetailView: View {
                 .ignoresSafeArea()
                 
             }
-            .navigationTitle(Person.name+Person.gradYearSimp)
+            .navigationTitle(Alumnus.name+Alumnus.gradYearSimp)
+            
             .toolbar{
-//
                 ToolbarItem(placement:.topBarTrailing){
-                    Button(action:{Person.isFavorite.toggle()}){
-                        Image(systemName: Person.isFavorite ? "star.fill" : "star")
+                    Button(action:{Alumnus.isFavorite.toggle()}){
+                        Image(systemName: Alumnus.isFavorite ? "star.fill" : "star")
                     }
                 }
             }
@@ -67,5 +69,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(Person: davidMiller)
+    DetailView(Alumnus: diegoRomero)
 }

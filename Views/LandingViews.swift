@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LandingViews: View {
     @State var searchText = ""
-    var filteredProfiles:[Info] {
-        filterPersons(from: allStudents, using: searchText)
+    var filteredProfiles:[alumnusInfo] {
+        filterAlumni(from: allAlumni, using: searchText)
         }
     
     var body: some View {
@@ -35,11 +35,11 @@ struct LandingViews: View {
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
                                
-                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: false))  {currentStudent in
+                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: false))  {currentAlumnus in
                                     NavigationLink{
-                                        DetailView(Person:currentStudent)
+                                        DetailView(Alumnus:currentAlumnus)
                                     }label: {
-                                        BasicStudentInfo(Person:currentStudent)
+                                        LandingLabelView(Alumnus:currentAlumnus)
                                             .foregroundColor(.black)
                                     }
                                 }
@@ -59,11 +59,11 @@ struct LandingViews: View {
                         .padding(.vertical,5)
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: twoRows,spacing: 10) {
-                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: true)) {currentStudent in
+                                ForEach(famousProfileSection(from: filteredProfiles, isFamous: true)) {currentAlumnus in
                                     NavigationLink{
-                                        DetailView(Person:currentStudent)
+                                        DetailView(Alumnus:currentAlumnus)
                                     }label: {
-                                        BasicStudentInfo(Person:currentStudent)
+                                        LandingLabelView(Alumnus:currentAlumnus)
                                             .foregroundColor(.black)
                                     }
                                     
@@ -77,7 +77,7 @@ struct LandingViews: View {
                     Spacer()
                 }
             }
-            .navigationTitle("LCS Alumni")
+            .navigationTitle("School Alumni")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
                             .padding(.leading,10)

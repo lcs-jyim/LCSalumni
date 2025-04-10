@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-struct DetailListView: View {
-    @State var Person: Info
+struct FavoritesLabelView: View {
+    @State var Alumnus: alumnusInfo
     var body: some View {
         HStack{
             HStack{
-                Image(Person.image)
+                Image(Alumnus.image)
                     .resizable()
                     .frame(width: 60,height: 80)
                     .offset(y:15)
                     .clipShape(.circle)
                 VStack(alignment:.leading){
-                    Text(Person.name)
+                    Text(Alumnus.name)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text(Person.gradYearSimp)
+                        
+                    Text(Alumnus.gradYearSimp)
                 }
                         
                 }
@@ -30,5 +31,5 @@ struct DetailListView: View {
 }
 
 #Preview {
-    DetailListView(Person:davidMiller)
+    FavoritesLabelView(Alumnus:diegoRomero)
 }

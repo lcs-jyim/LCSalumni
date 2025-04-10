@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct BasicStudentInfo: View {
-    let Person:Info
+struct LandingLabelView: View {
+    let Alumnus:alumnusInfo
     var body: some View {
         VStack(alignment:.leading){
-            Image(Person.image)
+            Image(Alumnus.image)
                 .resizable()
                 .frame(width: 88,height: 108)
                 .cornerRadius(5.0)
-            Text(Person.name)
+            Text(Alumnus.name)
                 .font(.system(size: 10))
                 .padding(.leading,5)
                 .fixedSize(horizontal: true, vertical: false)
-            Text(Person.gradYearSimp)
+                
+            Text(Alumnus.gradYearSimp)
                 .font(.system(size:10 ))
                 .padding(.leading,5)
             }
@@ -32,5 +33,5 @@ struct BasicStudentInfo: View {
     
 
 #Preview {
-    BasicStudentInfo(Person:vincentCloutier)
+    LandingLabelView(Alumnus:alexRivera)
 }

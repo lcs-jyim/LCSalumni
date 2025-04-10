@@ -7,7 +7,7 @@
 
 import Foundation
 
-func filterPersons(from people: [Info], using searchText: String) -> [Info] {
+func filterAlumni(from people: [alumnusInfo], using searchText: String) -> [alumnusInfo] {
     if searchText.isEmpty {
         return people
     } else {
@@ -17,7 +17,7 @@ func filterPersons(from people: [Info], using searchText: String) -> [Info] {
     }
 }
 
-func famousProfileSection(from people:[Info], isFamous:Bool) -> [Info] {
+func famousProfileSection(from people:[alumnusInfo], isFamous:Bool) -> [alumnusInfo] {
     if isFamous {
         return people.filter { $0.isFamous }
     } else {
@@ -25,18 +25,9 @@ func famousProfileSection(from people:[Info], isFamous:Bool) -> [Info] {
     }
 }
 
-//func indicesOfFavorites(in people: [Info]) -> [Info] {
-//    var favoriteIndices: [Int] = []
-//    for (index, person) in people.enumerated() {
-//        if person.isFavorite {
-//            favoriteIndices.append(index)
-//        }
-//    }
-//    return favoriteIndices
-//}
 
-func Favorites(in people:[Info]) -> [Info] {
-    var favoriteProfiles: [Info] = []
+func Favorites(in people:[alumnusInfo]) -> [alumnusInfo] {
+    var favoriteProfiles: [alumnusInfo] = []
     for x in people{
         if x.isFavorite == true{
             favoriteProfiles.append(x)
